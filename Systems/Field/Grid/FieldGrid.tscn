@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy5mctunvys0t"]
+
+[ext_resource type="Script" path="res://Systems/Field/Grid/FieldGrid.gd" id="1_ytvu3"]
+
+[node name="Grid" type="Node3D"]
+script = ExtResource("1_ytvu3")
