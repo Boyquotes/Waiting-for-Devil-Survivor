@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgmrtjfsgdeld"]
+[gd_scene load_steps=4 format=3 uid="uid://bgmrtjfsgdeld"]
 
 [ext_resource type="Script" path="res://Systems/Field/Field/Field.gd" id="1_us4i2"]
+[ext_resource type="PackedScene" uid="uid://b4pyvd55ddr5" path="res://Systems/Field/Field/Sub-Nodes/Units.tscn" id="2_a4tgi"]
+[ext_resource type="PackedScene" uid="uid://bcqom787yfh0b" path="res://Systems/Field/Field/Sub-Nodes/Maps.tscn" id="3_x4s6c"]
 
 [node name="Field" type="Node3D"]
 script = ExtResource("1_us4i2")
+
+[node name="Units" parent="." instance=ExtResource("2_a4tgi")]
+
+[node name="Maps" parent="." instance=ExtResource("3_x4s6c")]

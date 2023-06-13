@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcqom787yfh0b"]
+
+[ext_resource type="Script" path="res://Systems/Field/Field/Sub-Nodes/Maps.gd" id="1_2quv0"]
+
+[node name="Maps" type="Node"]
+script = ExtResource("1_2quv0")

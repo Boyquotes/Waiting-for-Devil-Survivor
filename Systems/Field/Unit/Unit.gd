@@ -14,11 +14,39 @@ signal modulate_changed(new_modulate: Color)
 
 
 
-var tile := Vector2i.ZERO: set = set_tile, get = get_tile
+@export var tile := Vector2i.ZERO: set = set_tile, get = get_tile
 
 @export var direction := Direction.SOUTH: set = set_direction, get = get_direction
 
 @export var modulate := Color( 1, 1, 1, 1 ): set = set_modulate, get = get_modulate
+
+var field: Field = null: set = set_field, get = get_field
+
+
+
+
+
+func _ready() -> void:
+	
+	if is_instance_valid(field):
+		
+		pass
+
+
+
+
+func _enter_tree() -> void:
+	
+	if Engine.is_editor_hint():
+		if get_tree().edited_scene_root == self:
+			return
+	
+	field = FieldHelpers.find_relevant_field(self)
+
+
+
+
+
 
 
 func set_tile(p_tile: Vector2i) -> void:
@@ -52,3 +80,22 @@ func set_modulate(p_modulate: Color) -> void:
 func get_modulate() -> Color:
 	
 	return modulate
+
+
+
+
+
+func set_field(p_field: Field) -> void:
+	
+	if is_instance_valid(field):
+		field.units.unregister_unit(name)
+	
+	if is_instance_valid(p_field):
+		p_field.units.register_unit(self)
+	
+	field = p_field
+
+
+func get_field() -> Field:
+	
+	return field

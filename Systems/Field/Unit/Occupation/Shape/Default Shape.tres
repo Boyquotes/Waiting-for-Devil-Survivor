@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FieldRectangularOccupationShape" load_steps=2 format=3 uid="uid://bdra011om8owa"]
+
+[ext_resource type="Script" path="res://Systems/Field/Unit/Occupation/Shape/FieldRectangularOccupationShape.gd" id="1_4ngoi"]
+
+[resource]
+resource_name = "1x1 Tile"
+script = ExtResource("1_4ngoi")
+offset = Vector2i(0, 0)
+size = Vector2i(1, 1)

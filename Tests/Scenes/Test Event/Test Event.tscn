@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://coyug1v8ftygf"]
+
+[ext_resource type="Script" path="res://Systems/Event/Event/Event.gd" id="1_kbaqb"]
+
+[node name="Test Event" type="Node"]
+script = ExtResource("1_kbaqb")
