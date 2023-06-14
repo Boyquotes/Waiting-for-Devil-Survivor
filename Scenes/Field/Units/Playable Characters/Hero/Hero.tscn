@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvo1rrmnmdnb5"]
+[gd_scene load_steps=2 format=3 uid="uid://dlgcrmnlrq2py"]
 
-[ext_resource type="Script" path="res://Systems/Field/Unit/Unit.gd" id="1_yvfv8"]
+[ext_resource type="Script" path="res://Systems/Field/Unit/FieldUnit.gd" id="1_kk3aq"]
 
 [node name="Hero" type="Node3D"]
-script = ExtResource("1_yvfv8")
+script = ExtResource("1_kk3aq")

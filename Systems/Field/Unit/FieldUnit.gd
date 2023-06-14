@@ -1,5 +1,5 @@
 @tool
-class_name Unit
+class_name FieldUnit
 extends Node3D
 
 
@@ -22,6 +22,8 @@ signal modulate_changed(new_modulate: Color)
 
 var field: Field = null: set = set_field, get = get_field
 
+var battle_squad: BattleSquad = null
+
 
 
 
@@ -42,6 +44,50 @@ func _enter_tree() -> void:
 			return
 	
 	field = FieldHelpers.find_relevant_field(self)
+
+
+
+
+
+
+
+
+
+
+func get_occupied_tiles() -> Array [Vector2i]:
+	
+	var occupiers := get_occupiers()
+	
+	var occupied_tiles_map: Dictionary = {}
+	
+	for occupier in occupiers:
+		for covered_tile in occupier.get_covered_tiles():
+			occupied_tiles_map[covered_tile + tile] = true
+	
+	var occupied_tiles: Array [Vector2i] = []
+	
+	for occupied_tile in occupied_tiles_map.keys():
+		occupied_tiles.append(occupied_tile as Vector2i)
+	
+	return occupied_tiles
+
+
+
+
+
+
+
+
+
+func get_occupiers() -> Array [FieldOccupier]:
+	
+	var occupiers: Array [FieldOccupier] = []
+	
+	for child in get_children(false):
+		if child is FieldOccupier:
+			occupiers.append(child)
+	
+	return occupiers
 
 
 

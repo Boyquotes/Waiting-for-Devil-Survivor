@@ -14,7 +14,7 @@ func has_unit(unit_name: String) -> bool:
 	return _units.has(unit_name)
 
 
-func get_unit(unit_name: String) -> Unit:
+func get_unit(unit_name: String) -> FieldUnit:
 	
 	if has_unit(unit_name):
 		return _units[unit_name]
@@ -22,20 +22,20 @@ func get_unit(unit_name: String) -> Unit:
 	return null
 
 
-func get_units() -> Array [Unit]:
+func get_units() -> Array [FieldUnit]:
 	
-	var unit_list: Array [Unit] = []
+	var unit_list: Array [FieldUnit] = []
 	
 	var keys := _units.keys()
 	
 	for key in keys:
-		var unit := _units[key] as Unit
+		var unit := _units[key] as FieldUnit
 		unit_list.append(unit)
 	
 	return unit_list
 
 
-func register_unit(unit_to_register: Unit) -> bool:
+func register_unit(unit_to_register: FieldUnit) -> bool:
 	
 	var unit_name: String = unit_to_register.name
 	if unit_name.is_empty() or has_unit(unit_name):
